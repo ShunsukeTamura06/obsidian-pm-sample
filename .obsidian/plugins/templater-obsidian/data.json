@@ -1,0 +1,19 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "04_テンプレート",
+  "templates_pairs": [["", ""]],
+  "trigger_on_file_creation": false,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {"folder": "01_案件", "template": "04_テンプレート/案件テンプレート.md"},
+    {"folder": "02_担当者", "template": "04_テンプレート/担当者テンプレート.md"},
+    {"folder": "05_週次報告", "template": "04_テンプレート/週次報告テンプレート.md"}
+  ],
+  "syntax_highlighting": true,
+  "enabled_templates_hotkeys": [""],
+  "startup_templates": [""]
+}

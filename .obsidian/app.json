@@ -1,0 +1,11 @@
+{
+  "livePreview": true,
+  "defaultViewMode": "source",
+  "promptDelete": true,
+  "showLineNumber": false,
+  "showIndentGuide": true,
+  "useTab": true,
+  "tabSize": 2,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "attachments"
+}

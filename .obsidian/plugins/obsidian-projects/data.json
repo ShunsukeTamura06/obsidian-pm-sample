@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "id": "case-management",
+      "name": "案件管理（全案件）",
+      "path": "01_案件",
+      "recursive": true,
+      "defaultName": "新規案件",
+      "templates": ["04_テンプレート/案件テンプレート.md"],
+      "fieldConfig": {},
+      "views": [
+        {"id": "view-table", "name": "テーブル", "type": "table", "config": {}},
+        {"id": "view-board-status", "name": "ステータス別ボード", "type": "board", "config": {"groupByField": "ステータス", "columns": ["未着手", "進行中", "レビュー中", "完了", "保留"]}},
+        {"id": "view-calendar-due", "name": "期限カレンダー", "type": "calendar", "config": {"dateField": "期限", "viewType": "month"}},
+        {"id": "view-board-level", "name": "案件レベル別ボード", "type": "board", "config": {"groupByField": "案件レベル", "columns": ["親", "子", "単体"]}}
+      ]
+    },
+    {
+      "id": "people",
+      "name": "担当者",
+      "path": "02_担当者",
+      "recursive": false,
+      "defaultName": "新規担当者",
+      "templates": ["04_テンプレート/担当者テンプレート.md"],
+      "fieldConfig": {},
+      "views": [{"id": "view-people-table", "name": "テーブル", "type": "table", "config": {}}]
+    },
+    {
+      "id": "weekly-reports",
+      "name": "週次報告",
+      "path": "05_週次報告",
+      "recursive": false,
+      "defaultName": "新規週次報告",
+      "templates": ["04_テンプレート/週次報告テンプレート.md"],
+      "fieldConfig": {},
+      "views": [{"id": "view-reports-table", "name": "テーブル", "type": "table", "config": {}}]
+    }
+  ]
+}
