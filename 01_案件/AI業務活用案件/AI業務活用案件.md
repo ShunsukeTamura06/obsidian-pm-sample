@@ -1,6 +1,5 @@
 ---
 担当: 田村, 藤原
-種別: 案件
 ステータス: 進行中
 優先度: 高
 開始日: 2026-04-01
@@ -23,11 +22,16 @@
 
 ## タスクノート一覧
 
-```dataview
-TABLE 担当, ステータス, 期限, 工数進捗 + "%" AS 進捗
-FROM "01_案件/AI業務活用案件"
-WHERE 種別 = "タスク"
-SORT ステータス ASC, 期限 ASC
+```dataviewjs
+const folder = dv.current().file.folder;
+const moc = dv.current().file.name;
+const tasks = dv.pages(`"${folder}"`).where(p => p.file.name !== moc);
+dv.table(["タスク", "担当", "ステータス", "期限", "進捗"],
+    tasks.sort(p => p.ステータス).map(p => [
+        p.file.link, p.担当, p.ステータス, p.期限,
+        (p.工数進捗 ?? "-") + (p.工数進捗 != null ? "%" : "")
+    ])
+);
 ```
 
 ## 担当者
